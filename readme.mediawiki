@@ -1,0 +1,90 @@
+zipit
+=====
+
+Installation
+-----------
+
+	Installation instructions:
+
+	1. Download ZIP from above and extract locally on your computer. <br /> 
+	2. Upload ASPXZipIt directory to your content directory via FTP. <br />
+	3. Move or merge the bin directory into the bin directory located in your content directory. <br />
+	4. Edit the web.config located inside ASPXZipIt directory. <br />
+		- Appsettings CloudFilesUserName - Enter your Rackspace username <br />
+		- Appsettings CloudFilesApiKey - Enter your CloudFiles ApiKey <br />
+	5. Browse to ASPXZipit directory via your browser and backup your site content and MSSQL Databases to Rackspace CloudFiles. 
+
+	MSSQL Backup Utility:
+
+	Things to note:
+
+	MSSQL Server must be setup to write to a share with appropriate permissions in place.  The utility essentially has mssql write 
+	a backup file to disk and then IIS zips and uploads to CloudFiles.
+	
+	In order to use the MSSQL Backup Utility please be sure to install the following stored procedure:
+
+	1. To install a stored procedure open up SSMS (SQL Server Management Studio) <br />
+	2. Select New Query in the upper right hand corener.  <br />
+	3. In the query window enter the following:<br />
+	<pre>
+	
+	set ANSI_NULLS ON
+	set QUOTED_IDENTIFIER ON
+	GO
+
+	CREATE PROCEDURE [dbo].[FullBackup]
+	 @FileName nvarchar(256)
+	AS
+	BEGIN
+
+	SET NOCOUNT ON;
+
+	BACKUP DATABASE [123456_YourDatabase] TO DISK = @FileName WITH COPY_ONLY, NOFORMAT, NOINIT, NAME = N'Full Database Backup', SKIP, NOREWIND, NOUNLOAD, STATS = 10
+
+	END
+
+	</pre>
+
+	Note:  You do not have to do step three if you use the Install Stored Procedure Button.
+
+	4. Be sure to enter your actual database name where [123456_YourDatabase] is.  <br />
+	5. Hit Execute to install the query.<br />
+	6. You can now backup your databse to Rackspace CloudFiles.<br />
+	
+Usage
+-----
+
+	This backup utility will create a backup of your content or mssql database to local disk, upload that file to Rackspace CloudFiles, and then delete the file from local disk.
+
+	.NET 3.5, .NET 4.0 and .NET 4.5 are all supported.
+
+	Once installed you can access the Zipit Backup Utility at http://yourdomain.com/ASPXZipIt
+
+	Please be sure that your content directory in Rackspace has a permission set of 770 unless using impersonation then you can use 750.
+
+	This application makes use of the following DLL's:
+	
+	DOTNETZIP: http://dotnetzip.codeplex.com/
+	Rackspace CloudFiles: http://rackspace.github.com/csharp-cloudfiles/
+
+
+Updating
+------------
+
+	To update to the lastest version simply re-install using instructions above
+
+License
+------------
+
+    By installing ASPXZipit Backup Utility you agree that this feature is an Unsupported Service 
+    (as defined herein) and you also agree to the terms of the GPL License! 
+    See: GPL v3 -- http://www.gnu.org/licenses/gpl-3.0.en.html
+
+
+    If you use the tool described in this article, you agree that the tool is an “Unsupported Service”. 
+    Rackspace makes no representation or warranty whatsoever regarding any Unsupported Service, and you 
+    agree that Rackspace will not be liable to you for any loss or damage arising from the provision of 
+    the Unsupported Service.  The Service Level Guaranties will not apply to the Unsupported Service, or 
+    any other aspect of your services that are adversely affected by the Unsupported Service.  
+    You acknowledge that Unsupported Services may not interoperate with Rackspace’s other services or 
+    other third party services you use.
