@@ -86,20 +86,6 @@
                                 ValidationGroup="BackupMssqlValidationGroup">*</asp:RequiredFieldValidator>
                         </td>
                     </tr>
-                    <tr>
-                        <td>File to Backup:
-                        </td>
-                        <td>
-                            <asp:TextBox runat="server" Height="25px" Width="215px" ID="FileObjbackup" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: center;">
-                            <br />
-                            <asp:ValidationSummary ID="BackupMssqlSummary" CssClass="BackupMssqlSummary" runat="server"
-                                ValidationGroup="BackupMssqlValidationGroup" />
-                        </td>
-                    </tr>
                 </table>
             </center>
             <center>
