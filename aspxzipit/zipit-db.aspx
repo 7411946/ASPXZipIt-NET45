@@ -87,6 +87,13 @@
                         </td>
                     </tr>
                     <tr>
+                        <td>File to Backup:
+                        </td>
+                        <td>
+                            <asp:TextBox runat="server" Height="25px" Width="215px" ID="FileObjbackup" />
+                        </td>
+                    </tr>
+                    <tr>
                         <td colspan="2" style="text-align: center;">
                             <br />
                             <asp:ValidationSummary ID="BackupMssqlSummary" CssClass="BackupMssqlSummary" runat="server"
@@ -110,6 +117,8 @@
                         Width="150px" />
                     <br />
                     <br />
+                    <asp:Button CssClass="button" ID="ManualSendToCF"
+                        runat="server" Text="Send to CF" OnClick="uploadmssql_test_Click" Width="150px" />
                 </div>
                 <font size="1em">ASPXZipit Backup provided by <a href="http://onesandzeros415.github.com/ASPXZipIt-NET40/"
                     target="_blank">Matthew Costello</a></font>
