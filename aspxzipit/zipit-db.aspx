@@ -101,8 +101,10 @@
                     <asp:Button CssClass="button" ValidationGroup="BackupMssqlValidationGroup" ID="btnAddStoredProcedure"
                         runat="server" Text="Install Stored Procedure" OnClick="btnAddStoredProcedure_Click"
                         Width="150px" />
+                    <br />
+                    <br />
                 </div>
-                <font size="1em">ASPXZipit Backup provided by <a href="http://onesandzeros415.github.com/ASPXZipIt-NET45/"
+                <font size="1em">ASPXZipit Backup .NET 4.5 provided by <a href="http://onesandzeros415.github.com/ASPXZipIt-NET45/"
                     target="_blank">Matthew Costello</a></font>
             </center>
         </div>

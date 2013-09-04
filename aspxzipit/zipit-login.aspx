@@ -24,10 +24,10 @@
             </center>
             <center>
                 <div>
-                    <asp:Login ID="Login1" DisplayRememberMe="false" runat="server" />
+                    <asp:Login ID="Login1" DisplayRememberMe="false" DestinationPageUrl="~/aspxzipit/Default.aspx" runat="server" />
                 </div>
                 <asp:Label ID="result" runat="server"></asp:Label></>
-                <font size="1em">ASPXZipit Backup provided by <a href="http://onesandzeros415.github.com/ASPXZipIt-NET40/"
+                <font size="1em">ASPXZipit Backup .NET 4.5 provided by <a href="http://onesandzeros415.github.com/ASPXZipIt-NET40/"
                     target="_blank">Matthew Costello</a></font>
             </center>
         </div>

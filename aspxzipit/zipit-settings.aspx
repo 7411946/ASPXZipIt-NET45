@@ -36,7 +36,13 @@
                 <br />
             </center>
             <center>
-                <h1>CloudFiles API Information:
+                <h1>Rebuild Application</h1>
+                <br />
+                <asp:Button CssClass="button" ID="Button5" runat="server" Text="Rebuild Application" OnClick="Manual_RebuildApplication_Click" Width="150px" />
+                <br />
+                <asp:Label runat="server" ID="lblinforebuildapp" ForeColor="Red" Text="" />
+                <br />
+                <h1>CloudFiles API Information
                 </h1>
                 <asp:Label runat="server" ID="lblinfo" ForeColor="Red" Text="" />
             </center>
@@ -99,9 +105,7 @@
             <br />
             <asp:Button CssClass="button" ID="btnresetCloudFilesApi" runat="server" Text="Default Api Creds" OnClientClick="return confirm('Are you sure you wish to revert your CloudFiles API Information back to default?');" OnClick="ChangeCloudFilesApiDefault_Click" Width="150px" />
             <br />
-            <br />
             <asp:Label runat="server" ID="lblinfocfinfo" ForeColor="Red" Text="" />
-            <br />
             <br />
             <h1>Impersonation Information:
             </h1>
@@ -234,14 +238,6 @@
             <asp:Label runat="server" ID="lblupdateaspx" ForeColor="Red" Text="" />
             <br />
             <br />
-            <h1>Rebuild Application ASPXZipIt</h1>
-            <br />
-            <asp:Button CssClass="button" ID="Button5" runat="server" Text="Rebuild Application" OnClick="Manual_RebuildApplication_Click" Width="150px" />
-            <br />
-            <br />
-            <asp:Label runat="server" ID="lblinforebuildapp" ForeColor="Red" Text="" />
-            <br />
-            <br />
             <h1>Uninstall ASPXZipIt</h1>
             <br />
             <asp:Button CssClass="button" ID="Button6" runat="server" Text="Uninstall ASPXZipIt" OnClientClick="return confirm('Are you sure you wish to uninstall ASPXZipIt permanently?');" OnClick="UninstallASPXZipIt_Click" Width="150px" />
@@ -251,7 +247,7 @@
             <br />
             <br />
             <center>
-                <font size="1em">ASPXZipit Backup provided by <a href="http://onesandzeros415.github.com/ASPXZipIt-NET40/"
+                <font size="1em">ASPXZipit Backup .NET 4.5 provided by <a href="http://onesandzeros415.github.com/ASPXZipIt-NET40/"
                     target="_blank">Matthew Costello</a></font>
             </center>
         </div>

@@ -51,7 +51,7 @@
                     <br />
                     <br />
                 </div>
-                <font size="1em">ASPXZipit Backup provided by <a href="http://onesandzeros415.github.com/ASPXZipIt-NET40/"
+                <font size="1em">ASPXZipit Backup .NET 4.5 provided by <a href="http://onesandzeros415.github.com/ASPXZipIt-NET40/"
                     target="_blank">Matthew Costello</a></font>
             </center>
         </div>
