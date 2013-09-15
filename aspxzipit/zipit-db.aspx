@@ -103,6 +103,11 @@
                         Width="150px" />
                     <br />
                     <br />
+                    <asp:Button CssClass="button" ValidationGroup="BackupMssqlValidationGroup" ID="btnShrinkLog"
+                        runat="server" Text="Shrink Log File" OnClick="btnShrinkLogFile_Click"
+                        Width="150px" />
+                    <br />
+                    <br />
                 </div>
                 <font size="1em">ASPXZipit Backup .NET 4.5 provided by <a href="http://onesandzeros415.github.com/ASPXZipIt-NET45/"
                     target="_blank">Matthew Costello</a></font>
