@@ -1,128 +1,103 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<%@ Page Language="C#" %>
+
+<%@ Import Namespace="System" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="System.Configuration" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="System.Net" %>
+<%@ Import Namespace="System.Web" %>
+<%@ Import Namespace="System.Web.Configuration" %>
+<%@ Import Namespace="System.Xml" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string deleteIsSuccess = Request.QueryString["rad"];
+        string path = Server.MapPath("~\\");
+        string installerpath_aspxzipit = path + "aspxzipit";
+
+        if (deleteIsSuccess == "success")
+        {
+            Directory.Delete(installerpath_aspxzipit);
+        }
+    }
+</script>
 <head id="Head1" runat="server">
-    <link href="styles/StyleSheet.css" rel="stylesheet" type="text/css" />
 
     <style id="importcss" runat="server" type="text/css">
-        body {
-            height: 100%;
-            background: #ddd;
-            margin-bottom: 1px;
-        }
-
-        .clear {
-            clear: both;
-        }
-
-        input {
-            border: 1px solid #818185;
-            -moz-border-radius: 15px;
-            border-radius: 15px;
-            height: 30px;
-            width: 200px;
-            padding-left: 8px;
-            padding-right: 8px;
-        }
-
-        .button {
-            border: 1px solid #818185;
-            background-color: #ccc;
-            -moz-border-radius: 15px;
-            border-radius: 15px;
-            text-align: center;
-            width: 100px;
-            color: #000;
-            padding: 3px;
-        }
-
-        .wrapper {
-            width: 700px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin: -225px 0 0 -345px;
-            background-color: #eee;
-            -moz-border-radius: 15px;
-            border-radius: 15px;
-            text-align: center;
-            padding: 20px;
-            -moz-box-shadow: 5px 5px 7px #888;
-            -webkit-box-shadow: 5px 5px 7px #888;
-        }
-
-        a {
-            color: #55688A;
-        }
-
-
-
         * {
             margin: 0;
             padding: 0;
         }
 
-        .group {
-            zoom: 1;
-            position: absolute;
-            top: -47px;
-            left: 24px;
+        body {
+            font: 1em "Arial", sans-serif;
+            background: #ccc;
+            background: url(https://raw.github.com/jeremehancock/zipit-backup-utility/master/images/background.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-color: #7397a7;
         }
 
-        .head {
-            text-align: center;
-            font-family: Fontin, sans-serif;
-            font-size: 28px;
-            margin-bottom: 10px;
+        #wrapper {
+            width: 720px;
+            margin: 40px auto 0;
+            padding-bottom: 20px;
         }
 
+            #wrapper h1 {
+                color: #2E2E2E;
+                margin-bottom: 10px;
+                font-family: 'Source Sans Pro', sans-serif;
+            }
 
-        .tabs {
-            list-style: none;
+            #wrapper a {
+                font-size: 1.2em;
+                color: #108DE3;
+                text-decoration: none;
+                text-align: center;
+            }
+
+        #tabContainer {
             width: 700px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin: -262px 0 0 -325px;
+            padding: 15px;
+            background-color: #2e2e2e;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
         }
 
-            .tabs li {
-                /* Makes a horizontal row */
-                float: left; /* So the psueudo elements can be 			   abs. positioned inside */
-                position: relative;
-            }
-
-            .tabs a {
-                /* Make them block level 		     and only as wide as they need */
-                float: left;
-                padding: 10px 40px;
-                text-decoration: none; /* Default colors */
-                color: black;
-                background: #CCCCCC; /* Only round the top corners */
-                -webkit-border-top-left-radius: 15px;
-                -webkit-border-top-right-radius: 15px;
-                -moz-border-radius-topleft: 15px;
-                -moz-border-radius-topright: 15px;
-                border-top-left-radius: 15px;
-                border-top-right-radius: 15px;
-            }
-
-            .tabs .active {
-                /* Highest, active tab is on top */
-                z-index: 3;
-            }
-
-                .tabs .active a {
-                    /* Colors when tab is active */
-                    background: #eee;
-                    color: black;
-                }
+        #tabscontent {
+            -moz-border-radius-topleft: 0px;
+            -moz-border-radius-topright: 5px;
+            -moz-border-radius-bottomright: 5px;
+            -moz-border-radius-bottomleft: 5px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            padding: 10px 10px 25px;
+            background: #FFFFFF; /* old browsers */
+            background: -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 90%, #e4e9ed 100%); /* firefox */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(90%,#FFFFFF), color-stop(100%,#e4e9ed)); /* webkit */
+            margin: 0;
+            color: #333;
+        }
     </style>
     <title>ASPXZipIt - Installer - .NET 3.5, 4.0</title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="wrapper">
-            You have successfully uninstalled ASPXZipIt.  Feel free to delete this page via FTP.
+        <div id="wrapper">
+            <h1>ASPX Zipit</h1>
+            <div id="tabContainer">
+                <div id="tabscontent" style="text-align: center">
+                    You have successfully uninstalled ASPXZipIt.  Feel free to delete this page via FTP.
+                </div>
+            </div>
         </div>
     </form>
 </body>

@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ASPXZipIt.aspxzipit.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>
+        <asp:ContentPlaceHolder ID="PageTitle" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <link href="<%=ResolveUrl("~/aspxzipit/assets/css/jquery-ui.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<%=ResolveUrl("~/aspxzipit/assets/css/style.css")%>" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            font: 1em "Arial", sans-serif;
+            background: url(assets/images/background.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-color: #7397a7;
+        }
+    </style>
+    <script type="text/javascript" src="<%=ResolveUrl("~/aspxzipit/assets/js/jquery-1.10.2.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/aspxzipit/assets/js/jquery-ui-1.10.3.custom.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/aspxzipit/assets/js/aspxzipit.js")%>"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <h1>Zipit Backup Utility
+                <div class="version_info" id="version_info">
+                    v2.0
+                </div>
+            </h1>
+            <div id="logout">
+                <a class='settings' href="<%=ResolveUrl("~/aspxzipit/zipit-settings.aspx")%>">
+                    <img src="<%=ResolveUrl("~/aspxzipit/assets/images/settings.png")%>" class="settings-tip" title="Settings" /></a>
+                <asp:LoginStatus ID="LoginStatus1" LoginImageUrl="~/aspxzipit/assets/images/logout.png" LogoutImageUrl="~/aspxzipit/assets/images/logout.png" Width="20" Height="20" runat="server" />
+            </div>
+            <div id="tabContainer">
+                <div id="tabs">
+                    <ul>
+                        <li runat="server" id="tabHeader_1"><a href="<%=ResolveUrl("Default.aspx")%>">Files</a></li>
+                        <li runat="server" id="tabHeader_2"><a href="<%=ResolveUrl("zipit-db.aspx")%>">Databases</a></li>
+                        <li runat="server" id="tabHeader_3"><a href="<%=ResolveUrl("zipit-logs.aspx")%>">Logs</a></li>
+                    </ul>
+                </div>
+                <div id="tabscontent">
+                    <h2>
+                        <center>
+                        <asp:ContentPlaceHolder ID="BodyHeader" runat="server">
+                        </asp:ContentPlaceHolder>
+                        </center>
+                    </h2>
+                    <br />
+                    <asp:ContentPlaceHolder ID="Body" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="dev_by" id="dev_by">Developed by: <a href="https://github.com/onesandzeros415" target="_blank">Matthew Costello</a></div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
