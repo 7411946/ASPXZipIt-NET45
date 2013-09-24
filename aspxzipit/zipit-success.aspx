@@ -1,17 +1,15 @@
 ﻿<%@ Page Language="C#" %>
 
 <%@ Import Namespace="System" %>
-<%@ Import Namespace="System.Collections.Generic" %>
-<%@ Import Namespace="System.Configuration" %>
 <%@ Import Namespace="System.IO" %>
-<%@ Import Namespace="System.Net" %>
-<%@ Import Namespace="System.Web" %>
-<%@ Import Namespace="System.Web.Configuration" %>
-<%@ Import Namespace="System.Xml" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <script runat="server">
+    
+    //ASPXZipIt Designed and Mainted By: Matthew Costello, 1/28/2013, San Antonio, Texas.
+    //Updated to v2 : 9/19/2013
+    
     protected void Page_Load(object sender, EventArgs e)
     {
         string deleteIsSuccess = Request.QueryString["rad"];
@@ -35,7 +33,7 @@
         body {
             font: 1em "Arial", sans-serif;
             background: #ccc;
-            background: url(https://raw.github.com/jeremehancock/zipit-backup-utility/master/images/background.jpg) no-repeat center center fixed;
+            background: url(https://github.com/onesandzeros415/ASPXZipIt-NET45/raw/master/aspxzipit/assets/images/background.jpg) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -87,7 +85,7 @@
             color: #333;
         }
     </style>
-    <title>ASPXZipIt - Installer - .NET 3.5, 4.0</title>
+    <title>ASPXZipIt - Successfully Uninstalled</title>
 </head>
 <body>
     <form id="form1" runat="server">

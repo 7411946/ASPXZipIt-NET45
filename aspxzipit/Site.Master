@@ -37,13 +37,14 @@
         <div id="wrapper">
             <h1>Zipit Backup Utility
                 <div class="version_info" id="version_info">
-                    v2.0
+                    <asp:Label ID="lblAsdpxZipitVersion" runat="server"></asp:Label>
                 </div>
             </h1>
             <div id="logout">
                 <a class='settings' href="<%=ResolveUrl("~/aspxzipit/zipit-settings.aspx")%>">
-                    <img src="<%=ResolveUrl("~/aspxzipit/assets/images/settings.png")%>" class="settings-tip" title="Settings" /></a>
-                <asp:LoginStatus ID="LoginStatus1" LoginImageUrl="~/aspxzipit/assets/images/logout.png" LogoutImageUrl="~/aspxzipit/assets/images/logout.png" Width="20" Height="20" runat="server" />
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/aspxzipit/assets/images/settings.png" Width="20" Height="20" />
+                </a>
+                <asp:LoginStatus ID="LoginStatus1" LoginImageUrl="~/aspxzipit/assets/images/logout.png" LogoutImageUrl="~/aspxzipit/assets/images/logout.png" Width="20" Height="20" BorderWidth="0" runat="server" />
             </div>
             <div id="tabContainer">
                 <div id="tabs">
@@ -66,6 +67,10 @@
                 </div>
                 <div class="dev_by" id="dev_by">Developed by: <a href="https://github.com/onesandzeros415" target="_blank">Matthew Costello</a></div>
             </div>
+        </div>
+        <div id="dialog" style="display: none">
+        </div>
+        <div id="dialogContent">
         </div>
     </form>
 </body>
