@@ -53,6 +53,13 @@
                 <asp:Label runat="server" ID="lblInfo3" ForeColor="Red" Text="" /></td>
         </tr>
         <tr>
+            <td style="width: 50%; text-align: right; padding-right: 10px;">Region :</td>
+            <td style="width: 50%; text-align: left;">
+                <asp:DropDownList ID="CF_ddl_Region" OnSelectedIndexChanged="CS_ddl_Region_SelectChange" AutoPostBack="true" runat="server">
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
             <td style="text-align: center;" colspan="2">
                 <h1>Update CloudFiles API Information</h1>
             </td>
@@ -202,7 +209,7 @@
     <br />
     <h1>Update ASPXZipIt</h1>
     <br />
-    <asp:Button CssClass="button" ID="btnUpdateAspx" runat="server" OnClientClick="javascript:return confirmAction(this.name,'Are you sure you wish to update ASPXZipIt?');" Text="Update ASPXZipIt" OnClick="UpdateASPXZipIt_Click" Width="150px" />
+    <asp:Button CssClass="button" ID="btnUpdateAspx" runat="server" OnClientClick="javascript:return confirmAction(this.name,'An update is available for ASPX Zipit.  Updating is imporant! Click ok to continue or cancel to postpone. ');" Text="Update ASPXZipIt" OnClick="UpdateASPXZipIt_Click" Width="150px" />
     <br />
     <br />
     <asp:Label runat="server" ID="lblupdateaspx" ForeColor="Red" Text="" />

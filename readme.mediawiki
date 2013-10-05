@@ -18,8 +18,8 @@ Installation
 
 	Things to note:
 
-	MSSQL Server must be setup to write to a share with appropriate permissions in place.  The utility essentially has mssql write 
-	a backup file to disk and then IIS zips and uploads to CloudFiles.
+	MSSQL Server must be setup to write to a share with appropriate permissions in place.  This utility creates a diretory called
+	aspxzipit_sql_bak.  In Rackspace Cloud Sites this directory must be set to 777 in order for your backup to be written.
 	
 	In order to use the MSSQL Backup Utility please be sure to install the following stored procedure:
 
@@ -60,7 +60,7 @@ Usage
 
 	Once installed you can access the Zipit Backup Utility at http://yourdomain.com/ASPXZipIt
 
-	Please be sure that your content directory in Rackspace has a permission set of 770 unless using impersonation then you can use 750.
+	Please be sure that your content directory in Rackspace Cloud Sites has a permission set of 750.
 
 	This application makes use of the following DLL's:
 	
@@ -71,7 +71,7 @@ Usage
 Updating
 ------------
 
-	To update to the lastest version simply re-install using instructions above
+	To update to the lastest version simply re-install using instructions above or go to settings within ASPX Zipit and click update! :-D enjoy!
 
 License
 ------------
